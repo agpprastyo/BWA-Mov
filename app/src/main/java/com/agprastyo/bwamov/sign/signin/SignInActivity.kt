@@ -6,9 +6,10 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.agprastyo.bwamov.HomeActivity
+import com.agprastyo.bwamov.home.HomeActivity
 import com.agprastyo.bwamov.R
-import com.agprastyo.bwamov.sign.SignUpActivity
+import com.agprastyo.bwamov.sign.signup.SignUpActivity
+import com.agprastyo.bwamov.utils.Constants.Companion.URL
 import com.agprastyo.bwamov.utils.Preferences
 import com.google.firebase.database.*
 
@@ -22,9 +23,7 @@ class SignInActivity : AppCompatActivity() {
 
     lateinit var preferences: Preferences
 
-    companion object {
-        const val URL = "https://bwa-mov-ec31f-default-rtdb.asia-southeast1.firebasedatabase.app"
-    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +37,7 @@ class SignInActivity : AppCompatActivity() {
         if (preferences.getValues("status").equals("1")) {
             finishAffinity()
 
-            var goHome = Intent(this@SignInActivity, HomeActivity::class.java)
+            val goHome = Intent(this@SignInActivity, HomeActivity::class.java)
             startActivity(goHome)
         }
 

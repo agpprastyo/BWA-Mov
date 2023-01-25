@@ -9,7 +9,7 @@ class Preferences(val context: Context) {
         const val USER_PREFF = "USER_PREFF"
     }
 
-    var sharedPreferences = context.getSharedPreferences(USER_PREFF, 0)
+    private var sharedPreferences: SharedPreferences = context.getSharedPreferences(USER_PREFF, 0)
 
     fun setValues(key: String, values: String) {
         val editor: SharedPreferences.Editor = sharedPreferences.edit()
